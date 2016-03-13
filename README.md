@@ -74,3 +74,8 @@ License
 -------
 
 rx-tweet-stream is licensed under the MIT License - see the `LICENSE` file for details.
+
+Credits
+---
+
+TweetSubscriber is inspired by the TwitterObservable of [yarn starter](https://github.com/daplab/yarn-starter). 
