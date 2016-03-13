@@ -23,15 +23,15 @@ public interface TweetStream {
     }
 
     static Observable<Status> of(final Configuration configuration, final String[] languages, final String[] searchTerms) {
-        return Observable.create(new TweetSubscriber(configuration, languages, searchTerms, DEFAULT_USERS_TO_TRACK)).share();
+        return of(configuration, languages, searchTerms, DEFAULT_USERS_TO_TRACK);
     }
 
     static Observable<Status> of(final Configuration configuration, final String... searchTerms) {
-        return Observable.create(new TweetSubscriber(configuration, DEFAULT_LANGUAGES_TO_TRACK, searchTerms, DEFAULT_USERS_TO_TRACK)).share();
+        return of(configuration, DEFAULT_LANGUAGES_TO_TRACK, searchTerms, DEFAULT_USERS_TO_TRACK);
     }
 
     static Observable<Status> of(final Configuration configuration, final long... usersToFollow) {
-        return Observable.create(new TweetSubscriber(configuration, DEFAULT_LANGUAGES_TO_TRACK, DEFAULT_SEARCH_TERMS_TO_TRACK, usersToFollow)).share();
+        return of(configuration, DEFAULT_LANGUAGES_TO_TRACK, DEFAULT_SEARCH_TERMS_TO_TRACK, usersToFollow);
     }
 
     static Observable<Status> of(final Configuration configuration, final String[] languages, final String[] searchTerms, final long[] usersToFollow) {
